@@ -115,17 +115,17 @@ const Chatroom = props => {
         try {
             if (props.scope === 'Global Chat') {
                 const response = await getGroupMessages(currentUser[0].token)
-                for (let i = 0; i < response.length; i++) {
-                    response[i].image = `/users/${response[i].from}/avatar`
-                }
+                // for (let i = 0; i < response.length; i++) {
+                //     response[i].image = `/users/${response[i].from}/avatar`
+                // }
                 setMessages(response)
             } else if (scope!== null && conversationID) {
                 let response = await getPrivateMessages(user._id, currentUser[0].token)
 
                 await resetCount(currentUser[0].token, conversationID)
-                for (let i = 0; i < response.length; i++) {
-                    response[i].image = `/users/${response[i].from}/avatar`
-                }
+                // for (let i = 0; i < response.length; i++) {
+                //     response[i].image = `/users/${response[i].from}/avatar`
+                // }
                 setMessages(response)
                 return response
             } else {

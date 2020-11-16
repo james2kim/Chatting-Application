@@ -114,12 +114,6 @@ router.get('/conversations/query', auth, async (req, res) => {
                     { $and: [{ to: user1 }, { from: user2 }] },
                     { $and: [{ to: user2 }, { from: user1 }] },
                 ],
-            },
-            
-            {
-                options: {
-                    limit: parseInt(req.query.limit)
-                }
             })
  
         res.send(messages);
@@ -182,6 +176,7 @@ router.post('/query',auth, async (req, res) => {
             to: req.body.to,
             from: req.user._id,
             body: req.body.body,
+            image: `/users/${req.user._id}/avatar`
         })
 
 
