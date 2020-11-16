@@ -1,0 +1,9 @@
+.Home {
+    font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+    color: #404040;
+    background-color: #3578E5;
+    opacity:0.9;
+    height:100vh;
+    display: flex;
+    align-items: center;
+}

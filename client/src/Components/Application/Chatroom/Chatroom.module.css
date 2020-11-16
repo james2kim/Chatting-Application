@@ -1,0 +1,233 @@
+.Chatroom {
+    box-shadow:0px 0px 3px rgba(0,0,0,0.4),
+    20px 10px 10px rgba(0,0,0,0.1),
+    20px 18px 23px rgba(0,0,0,0.1);
+}
+
+.Chatroom header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:0px 0px 2px rgba(0,0,0,0.4),
+    10px 5px 10px rgba(0,0,0,0.2),
+    10px 0px 20px rgba(0,0,0,0.1);
+    padding-bottom: 0.87%;
+    padding-top: 0.87%;
+}
+
+
+.GlobalPic {
+    width:30px;
+    border-radius: 50%;
+    margin-right: 2%;
+    margin-top: 25%;
+}
+
+.ScopePic {
+    width:40px;
+    border-radius: 50%;
+    margin-right: 20%;
+    margin-top: 18%;
+}
+
+
+
+.ProfilePic {
+    width:65px;
+    height:65px;
+    border-radius: 50%;
+}
+
+.AvatarSpacing {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+
+.Avatar {
+    width:60px;
+    border-radius: 50%;
+    margin-top: 14%;
+}
+
+.Description {
+    color:#0ca3d2;
+    font-weight: 600;
+    font-size: 18px;
+  
+}
+
+.NonActiveLine {
+    border-top: 2px solid #D3D3D3;
+}
+
+
+.Messages {
+    height:calc(100vh - 246px);
+    overflow:auto; 
+    margin-top: 0.2%;
+    background-color: 	#F0F0F0;
+
+}
+
+.Message {
+    display: grid;
+    grid-template-columns: 22% 78%;
+    width:50%;
+    margin-left: 3%;
+    margin-top: 1%;
+    cursor: pointer;
+    /* font-size: 17px; */
+}
+
+
+
+.MessageInput { 
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; 
+    outline: 0; box-shadow: none; border: none; 
+    border: 2px solid #D3D3D3; 
+    width:99%;
+    border-radius: 0; 
+    box-sizing: content-box; 
+    background-color: transparent; 
+    padding: 1rem 0; 
+    margin-top: 0.5%;
+    font-size: 16px;
+    resize: none;
+}
+
+::placeholder {
+    color:#606060;;
+    font-size: 17px;
+    opacity: 1;
+    padding-left: 0.5%;
+}
+
+ ::placeholder :focus {
+    color:transparent;
+}
+
+
+.Button {
+    border: none;
+    cursor: pointer;
+    width:5%;
+    font-size: 23px;
+}
+
+.Send {
+    width:100%;
+}
+
+.Bold {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (max-width: 1500px) {
+
+    .Message {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    .Message {
+        width:83%;
+        margin-top: 2%;
+    }
+
+        .Bold {
+        font-size: 16px;
+    }
+
+    .MessageBody {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (min-width: 550px) and (max-width:800px) {
+
+    .Chatroom {
+        margin-top: 5.5% !important;
+    }
+
+}
+
+@media (max-width:800px) {
+
+    .Chatroom {
+        margin-top: 11%;
+        font-size: 12px;
+    }
+    .Messages {
+        height:calc(58vh - 146px);
+    }
+
+    .Message {
+        width:80%;
+    }
+
+    .Chatroom header {
+        box-shadow: none;
+        border: 1px solid #0ca3d2;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-color: #3578E5;
+        opacity:0.9;
+    }
+
+    .Description {
+        font-size: 13px;
+        color:black;
+        font-weight: bold;
+    }
+
+    .ProfilePic {
+        width:45px;
+        height:46.5px;
+    }
+
+    .ScopePic {
+        width: 30px;
+        margin-top: 22%;
+    }
+
+    .GlobalPic {
+        width:25px;
+    }
+
+    .Bold {
+        font-size: 13px;
+    }
+
+    .Avatar {
+        width:40px;
+        margin-top: 23%;
+    }
+
+    .MessageInput {
+        font-size: 12px;
+        padding: 0.75rem 0; 
+    }
+
+    ::placeholder {
+        color:#606060;;
+        font-size: 12px;
+        opacity: 1;
+        padding-left: 1%;
+    }
+
+    .MessageBody {
+        font-size: 12px;
+    }
+
+}
+
+

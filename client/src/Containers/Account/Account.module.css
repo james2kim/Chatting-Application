@@ -1,0 +1,416 @@
+/* Account Container CSS */
+
+.AccountContainer {
+
+  background:#3578E5;
+  height:100vh;
+  padding-top: 3%;
+
+}
+
+.Account {
+  margin: 30px auto;
+  padding: 20px 20px 20px;
+  width: 600px;
+  margin-bottom: 20%;
+  background-color:#F0F0F0;
+  border-radius: 3px;
+}
+
+.Account:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.Account h1 {
+  margin: 0 -20px  21px;
+  margin-top: 5%;
+  padding-bottom: 10px;
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  text-shadow: 0 1px #F0F0F0;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #F0F0F0);
+  background-image: -moz-linear-gradient(top, whiteffd, #F0F0F0);
+  background-image: -o-linear-gradient(top, whiteffd, #F0F0F0);
+  background-image: linear-gradient(to bottom, whiteffd, #F0F0F0);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+
+/* End of Account Container CSS */
+
+
+/* CSS for Account Information  */
+
+.ProfilePhotoContainer {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.DefaultAvatar {
+  width:200px;
+    border-radius: 50%;
+
+}
+
+.Data {
+  display: grid;
+  grid-template-rows: 23.33% 23.33% 23.33%;
+  margin-bottom: -8%;
+ 
+}
+
+
+.Information{
+    width: 100%;
+    padding: 5px 0px;
+    margin: 18px 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    cursor: pointer;
+}
+
+.Bold {
+  font-weight: 600;
+}
+
+.Edit {
+  text-align: end;
+  color:#3578E5
+}
+
+.Edit:hover {
+  text-decoration: underline;
+}
+
+.Icon {
+  font-size: 12px;
+}
+
+.ButtonSpacing{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.AccountButton {
+  padding: 10px 12px;
+  font-size: 13.5px;
+  cursor: pointer;
+  width:150px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -moz-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
+  -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .DeleteAccountButton {
+    padding: 10px 12px;
+    font-size: 13.5px;
+    cursor: pointer;
+    width:150px;
+    font-weight: 600;
+    color: black;
+    text-shadow: 0 1px #ffccbb;
+    background: #ffccbb;
+    border: 1px solid red;
+    border-color: #b4ccce #b3c0c8 #9eb9c2;
+    border-radius: 16px;
+    outline: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background-image: -webkit-linear-gradient(top, #FFA07A, salmon);
+    background-image: -moz-linear-gradient(top, #FFA07A, salmon);
+    background-image: -o-linear-gradient(top, #FFA07A, salmon);
+    background-image: linear-gradient(to bottom, #FFA07A, salmon);
+    -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 white, 0 1px 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .AccountButton button:hover {
+    opacity: 0.8;
+  }
+
+  .UpdatedAt {
+    border: none;
+    font-size: 0.7vw;
+ 
+  }
+
+
+  .Redirect {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width:33%;
+    margin-left: 33%;
+    margin-top: 2%;
+    color:black;
+    font-size: 20px;
+  }
+
+  .Redirect:hover {
+    animation: ani 0.7s infinite;
+  }
+
+
+  @keyframes ani {
+    0% {
+      justify-content:space-between;
+    }
+    25% {
+      justify-content:space-around;
+
+    }
+
+    50% {
+      justify-content: center;
+    }
+
+    75% {
+      justify-content: space-around;
+    }
+
+    100% {
+      justify-content: space-between;
+
+    }
+  }
+
+  /* End of CSS for Account Information  */
+
+
+
+  /* CSS for Update Form  */
+  .UpdateForm {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .UpdateForm div {
+    padding: 5px 0px;
+    margin: 18px 0;
+  }
+
+  .UpdateButtons{
+    width:50%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .UpdateButton {
+    padding: 10px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    width:100px;
+    font-weight: bold;
+    color: #527881;
+    text-shadow: 0 1px #e3f1f1;
+    background: #cde5ef;
+    border: 1px solid;
+    border-color: #b4ccce #b3c0c8 #9eb9c2;
+    border-radius: 13px;
+    outline: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
+    background-image: -moz-linear-gradient(top, #edf5f8, #cde5ef);
+    background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
+    background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
+    -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .CancelButton {
+    padding: 10px 10px;
+    font-size: 12.5px;
+    cursor: pointer;
+    width:100px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0 1px salmon;
+    background: salmon;
+    border: 1px solid;
+    border-color: #b4ccce #b3c0c8 #9eb9c2;
+    border-radius: 13px;
+    outline: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 white, 0 1px 1px rgba(0, 0, 0, 0.15);
+  }
+  
+  .Preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .PhotoPreview {
+    width: 120px;
+    border-radius: 10px;
+  }
+
+  .CancelPreview {
+    margin-top: 3%;
+    padding: 5px 5px;
+    font-size: 10px;
+    cursor: pointer;
+    width:70px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0 1px salmon;
+    border: 1px solid;
+    border-color: salmon salmon salmon;
+    outline: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 white, 0 1px 1px rgba(0, 0, 0, 0.15);
+  }
+
+input[type="file"] {
+  display: none;
+}
+
+.ProfileIcon {
+  font-size: 20px;
+}
+
+.FileUpload{
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.Bold {
+  font-weight: 600;
+}
+
+  /* End of CSS for Update Form */
+
+
+  @media(max-width: 1500px) {
+
+    .DefaultAvatar {
+      width:155px
+    }
+
+    .Account {
+      width:500px;
+    }
+
+    .Account h1 {
+      font-size: 25px;
+    }
+
+    .Information {
+      margin: 5px 0;
+    }
+
+    .Redirect {
+      width:40%;
+      margin-left: 29%;
+    }
+
+  }
+
+  @media(max-width: 650px) {
+
+
+    .AccountContainer {
+      display: flex;
+      align-items: center;
+    }
+    .Account {
+      width:75%;
+    }
+
+    .Account h1 {
+      font-size: 20px;
+      margin-top: 10%;
+    }
+
+    .NavigateBack {
+      font-size: 12px;
+    }
+
+    .DefaultAvatar {
+      width:100px
+    }
+
+    .Edit {
+      font-size: 10px;
+      padding-top:5%;
+
+    }
+    .Data {
+      margin-bottom: -22%;
+    }
+
+    .Information {
+      font-size: 12px;
+    }
+
+    .Redirect {
+      font-size: 14px;
+      width:50%;;
+      margin-left: 20%;
+      margin-top: 15%;
+    }
+
+    .UpdateForm {
+      text-align: center;
+    }
+
+
+
+    .UpdateButton {
+      padding: 7px 7px;
+      margin: 6px 6px 6px 6px
+    }
+    .CancelButton {
+      padding: 7px 7px;
+      margin: 6px 6px 6px 6px
+    }
+  }

@@ -1,0 +1,159 @@
+.Conversations {
+    margin-top: 1%;
+}
+
+.ProfilePic {
+    width:60px;
+    border-radius: 50%;
+    margin-top: 15%;
+
+}
+
+.GlobalPic {
+    width: 55px;
+    border-radius: 50%;
+    margin-top: 5%;
+ 
+}
+
+.Conversation {
+
+    display: grid;
+    grid-template-columns: 23% 65% 17%;
+    width:80%;
+    margin-left: 4%;
+    margin-top: 2%;
+    cursor: pointer;
+    
+}
+
+
+
+.Divider {
+    background-color:  #D3D3D3;
+    border: none;
+    height: 1px;
+}
+
+.Title {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.Conversation p2 {
+    text-align: end;
+    margin-top: 45%;
+}
+
+.lastMessage {
+    font-size: 14px;
+}
+
+ .Notification  {
+    color: red;
+    vertical-align: middle;
+    margin-top: 50% ;
+}
+
+@media (max-width:1500px) {
+
+    .Conversation {
+        grid-template-columns: 30% 55% 15%;
+    }
+
+    .ProfilePic {
+        margin-top: 16.5%;
+    }
+
+    .Title {
+        font-size: 18.5px
+    }
+
+};
+
+@media (max-width: 1300px) {
+
+    .Title {
+        font-size: 15px;
+    }
+
+    .ProfilePic {
+        width:45px
+    }
+
+    .GlobalPic {
+        width:45px
+    }
+
+    .Conversation {
+        grid-template-columns: 30% 55% 15%;
+        width:80%
+    }
+
+};
+
+@media (min-width: 800px) and (max-width:1000px) {
+
+    .Title {
+        font-size: 13px !important;
+    }
+
+    .ProfilePic {
+        width:40px !important
+    }
+
+    .Conversation {
+        width:90% !important
+    }
+
+}
+
+@media (min-width:600px) and (max-width:800px) {
+
+    .Conversation {
+        width:60% !important;
+        grid-template-columns: 25% 60% 15% !important;
+    }
+
+    .Title {
+        font-size: 15px !important;
+    }
+
+    .lastMessage {
+        font-size: 13px !important;
+    }
+
+
+
+}
+
+@media (max-width:800px) {
+
+    .Conversations {
+        font-size: 12px;
+    }
+
+    .Conversation {
+        width:70%;
+        margin-top: 3%;
+        grid-template-columns: 35% 50% 15%;
+    }
+
+    .ProfilePic {
+        margin-top: 16%;
+        width:40px
+    }
+    .GlobalPic {
+        width:40px;
+        margin-top: 5%;
+    }
+
+    .Title {
+        font-size: 13px;
+    }
+
+    .lastMessage {
+        font-size: 11px;
+    }
+   
+}

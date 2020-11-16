@@ -1,0 +1,82 @@
+.Layout {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    box-shadow:0px 0px 2px rgba(0,0,0,0.4),
+    10px 5px 10px rgba(0,0,0,0.2),
+    10px 0px 20px rgba(0,0,0,0.1);
+}
+
+.Tabs {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width:100%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+.NonActive {
+    color:#909090;
+}
+
+.Active {
+    color:#0ca3d2;
+    font-weight: bold;
+}
+
+.NonActiveLine {
+    border-top: 2px solid #D3D3D3;
+}
+
+.ActiveLine {
+    border-top: 2px solid #0ca3d2
+}
+
+.Left {
+    height:calc(100vh - 200px);
+    outline:none;
+    overflow-x: none;
+    overflow-y:auto;
+}
+
+.Unread {
+    background-color: red;
+    color: white;
+    border-radius: 30%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.Color {
+    background-color: 	#F0F0F0;
+}
+
+@media (max-width: 1200px) {
+
+    .Tabs {
+        font-size: 21px;
+    }
+
+}
+
+
+@media (max-width:800px) {
+
+    .Layout {
+        grid-template-columns: 100%;
+        grid-template-rows: 35% 65%;
+    }
+
+    .Left{
+        height:calc(32vh - 5px);
+    }
+
+    .Tabs {
+        font-size: 16px;
+        padding-top: 10px;
+        margin-top: 3px;
+    }
+    
+}

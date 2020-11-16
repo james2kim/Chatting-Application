@@ -1,0 +1,92 @@
+.Outline {
+    outline:none;
+    overflow:auto; 
+}
+
+.Users {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width:45%;
+    margin-top: 1%;
+    margin-left: 4%;
+    cursor: pointer;
+
+}
+
+.ProfilePic {
+    width:60px;
+    border-radius: 50%; 
+    margin-top: 20%;
+}
+
+
+
+.User {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.Active {
+    font-size: 12px;
+}
+
+.Icon {
+    color: green;
+    font-size: 12px;
+}
+
+@media (max-width:1500px) {
+    .Users {
+        width: 57%;
+    }
+
+    .User {
+        font-size: 18px;
+    }
+
+    .ProfilePic {
+        margin-top: 16%;
+    }
+}
+
+@media (max-width: 1300px) {
+
+    .ProfilePic {
+        width:52px;
+    }
+
+    .Users {
+        width: 55%;
+    }
+
+    .User {
+        font-size: 15px;
+    }
+
+    .Active {
+        font-size: 12px;
+    }
+
+}
+
+
+@media (max-width:800px) {
+
+    .ProfilePic {
+        width:40px;
+        height:40px;
+        margin-top: 28%;
+    }
+
+    .Users {
+        width:45%
+    }
+    .User {
+        font-size: 13px;
+    }
+
+    .Active {
+        font-size: 12px;
+    }
+   
+}

@@ -1,0 +1,35 @@
+.Logo {
+    width:170px
+}
+
+.Navbar {
+    /* background-color: #686868; */
+    background-color: #3578E5;
+    padding-top: 2px;
+    /* border-bottom: 1px solid #D3D3D3; */
+    /* padding-bottom:1px; */
+ 
+}
+
+.Unread {
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+    padding : 0.1% 0.25% 0.1% 0.25%
+
+}
+
+.title {
+    color:white;
+    background-color: black;
+    font-weight: 600;
+    font-size: 2vw;
+    padding-left: 5%;
+}
+
+
+@media (max-width:700px) {
+    .Logo {
+        width:100px
+    }
+}
