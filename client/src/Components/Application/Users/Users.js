@@ -16,11 +16,6 @@ const Users = (props) => {
         let mounted = true 
         async function fetchData() {
             let response = await userList(currentUser[0].token)
-
-            for (let i = 0 ; i < response.length; i++) {
-                response[i].image = `/users/${response[i]._id}/avatar`
-            }
-
             if (mounted) setUsers(response) 
         }
     

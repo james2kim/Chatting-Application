@@ -46,6 +46,9 @@ const userSchema = new mongoose.Schema({
     }],
     avatar: {
         type:Buffer
+    },
+    image: {
+        type:String
     }
 })
 
@@ -77,17 +80,12 @@ userSchema.methods.generateAuthToken = async function () {
 
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({email})
-
-    if (!user) {
-        throw new Error('Unable to login')
-    }
-
+    
+    if (!user) throw new Error('Unable to login')
     const isMatch = await bcrypt.compare(password, user.password)
 
-    if (!isMatch) {
-        throw new Error('Unable to login')
-    }
-
+    if (!isMatch) throw new Error('Unable to login')
+    
     return user
 }
 
@@ -102,12 +100,7 @@ userSchema.pre('save', async function (next) {
     next()
 })
 
-// Delete user tasks when user is removed 
-userSchema.pre('remove', async function (next) {
-    const user = this
-    await Task.deleteMany({author: user._id})
-    next()
-})
+
 
 const User = mongoose.model('User', userSchema)
 

@@ -5,7 +5,6 @@ import {SignupHandler} from '../../../Services/AuthenticationService'
 
 const Signup = (props) => {
     const signup = SignupHandler()
-
     const { name, 
             email, 
             password, 
@@ -18,6 +17,7 @@ const Signup = (props) => {
     const signupHandler = async event => {
         event.preventDefault()
         const user = await signup(titleCaseString(name), email, password)
+   
         if (user) window.location.reload()
     }
 

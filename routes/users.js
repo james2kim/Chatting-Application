@@ -21,6 +21,7 @@ router.get('/users', auth, async (req,res) => {
                 password: 0,
                 __v: 0
             })
+           
 
             res.send(users)
             
@@ -36,27 +37,25 @@ router.get('/users', auth, async (req,res) => {
 
 // Route Handler to Sign Up for Account. This handler will create a user in DB, add a default profile photo buffer to this User Schema
 router.post('/users', async(req,res) => {
-    const io = req.app.get('socketio')
-
         const user = new User(req.body)
         user.avatar= fs.readFileSync(defaultImageURL)
-
     try {
 
         const ifUser = await User.findOne({email:req.body.email})
      
-        if (ifUser) {
-            return res.send('Account Registered')
-        }
-
+        if (ifUser) return res.send('Account Registered')
+    
         await user.save()
         const token = await user.generateAuthToken()
-
+        let u  = await User.findOne({email: req.body.email})
+        await User.findByIdAndUpdate(u._id, {image: `/users/${u._id}/avatar`})
         res.status(201).send({user,token})
     } catch (err) {
         res.status(400).send(err)
     }
 })
+
+
 
 // Route Handler to Login to Acount.
 router.post('/users/login', async (req, res) => {
