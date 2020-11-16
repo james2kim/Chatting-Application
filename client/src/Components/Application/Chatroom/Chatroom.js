@@ -23,7 +23,7 @@ const Chatroom = props => {
     const getPrivateMessages = GetPrivateMessagesHandler()
     const sendPrivateMessage = SendPrivateMessageHandler()
     const resetCount = ResetCountHandler()
-    console.log(response)
+ 
     const {   
         currentUser, 
         messages, 
