@@ -128,7 +128,6 @@ const Chatroom = props => {
         } catch (err) {
             console.log(err)
         }
-
     }
 
     // Input change handler 
