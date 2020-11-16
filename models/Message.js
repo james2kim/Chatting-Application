@@ -22,6 +22,9 @@ const MessageSchema = new Schema({
         type: String,
         default: Date.now,
     },
+    image: {
+        type:String
+    }
 });
 
 const Message = mongoose.model('Message', MessageSchema)

@@ -13,6 +13,9 @@ const GlobalMessageSchema = new mongoose.Schema({
         type: String,
         default: Date.now,
     },
+    image: {
+        type:String
+    }
 })
 
 const GlobalMessage = mongoose.model('GroupMessage', GlobalMessageSchema)

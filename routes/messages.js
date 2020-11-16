@@ -14,7 +14,8 @@ router.post('/group', auth, async (req, res) => {
 
     let message = new GlobalMessage({
         from: req.user._id,
-        body:req.body.body
+        body:req.body.body,
+        image: `/users/${req.user._id}/avatar`
     })
 
     // Grab the io object reference

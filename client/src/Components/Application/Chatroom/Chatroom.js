@@ -23,7 +23,7 @@ const Chatroom = props => {
     const getPrivateMessages = GetPrivateMessagesHandler()
     const sendPrivateMessage = SendPrivateMessageHandler()
     const resetCount = ResetCountHandler()
-
+    console.log(response)
     const {   
         currentUser, 
         messages, 
@@ -118,6 +118,8 @@ const Chatroom = props => {
                 // for (let i = 0; i < response.length; i++) {
                 //     response[i].image = `/users/${response[i].from}/avatar`
                 // }
+
+             
                 setMessages(response)
             } else if (scope!== null && conversationID) {
                 let response = await getPrivateMessages(user._id, currentUser[0].token)
