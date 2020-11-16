@@ -56,13 +56,8 @@ const Conversations = props => {
                     }
                 setTotalCount(globalCount)
            
-                if (mounted) 
-                    {
-                        response = response.sort((a,b) => {
-                            return +b.date - +a.date
-                        })
-                        setConversations(response) 
-                    }
+                if (mounted) setConversations(response) 
+                    
             } catch (err) {
                 console.log(err)
             }   

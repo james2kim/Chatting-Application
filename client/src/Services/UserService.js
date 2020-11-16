@@ -9,12 +9,20 @@ export const GetUsersHandler = () => {
 
     const getUsers = async (token) => {
         try {
-            const response = await axios({
+            let response = await axios({
                 method:'GET',
                 url:'/users',
                 headers: AuthHeader(token),
             })
-            return response.data
+
+            response = response.data.sort((a,b) => {
+                let fa = a.name.toLowerCase(),
+                fb = b.name.toLowerCase();
+                if (fa < fb) return -1;
+                if (fa > fb) return 1;
+                return 0;
+            })
+            return response
         } catch (err) {
             console.log(err)
             enqueueSnackbar('Could not load Users', {

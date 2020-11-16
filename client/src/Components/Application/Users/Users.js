@@ -16,13 +16,6 @@ const Users = (props) => {
         let mounted = true 
         async function fetchData() {
             let response = await userList(currentUser[0].token)
-            response = response.sort((a,b) => {
-                let fa = a.name.toLowerCase(),
-                fb = b.name.toLowerCase();
-                if (fa < fb) return -1;
-                if (fa > fb) return 1;
-                return 0;
-            })
 
             for (let i = 0 ; i < response.length; i++) {
                 response[i].image = `/users/${response[i]._id}/avatar`

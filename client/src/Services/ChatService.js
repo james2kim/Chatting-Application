@@ -59,12 +59,16 @@ export const GetConversationsHandler = () => {
 
     const getConversations = async token => {
         try {
-            const response = await axios({
+            let response = await axios({
                 method:'GET',
                 url:'/conversations',
                 headers: AuthHeader(token)
             })
-            return response.data
+
+            response = response.data.sort((a,b) => {
+                return +b.date - +a.date
+            })
+            return response
         } catch (err) {
             console.log(err)
             enqueueSnackbar('Could not load chats', {
