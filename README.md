@@ -29,27 +29,27 @@ This application provides users with the following features
 
 
 #### Private Chat 
-![Private Screenshot](https://github.com/james2kim/chating-application/blob/main/assets/private.png)
+![Private Screenshot](https://github.com/james2kim/chatting-application/blob/main/assets/private.png)
 
 
 
 #### Login
-![Login Screenshot](https://github.com/james2kim/chating-application/blob/main/assets/login-screenshot.png)
+![Login Screenshot](https://github.com/james2kim/chatting-application/blob/main/assets/login-screenshot.png)
 
 
 
 #### Signup
-![Signup Screenshot](https://github.com/james2kim/chating-application/blob/main/assets/signup-screenshot.png)
+![Signup Screenshot](https://github.com/james2kim/chatting-application/blob/main/assets/signup-screenshot.png)
 
 
 
 #### Account
-![Account Screenshot](https://github.com/james2kim/chating-application/blob/main/assets/account-screenshot.png)
+![Account Screenshot](https://github.com/james2kim/chatting-application/blob/main/assets/account-screenshot.png)
 
 
 
 #### Update Profile Photo
-![Update Profile Photo Screenshot](https://github.com/james2kim/chating-application/blob/main/assets/updateaccount-screenshot.png)
+![Update Profile Photo Screenshot](https://github.com/james2kim/chatting-application/blob/main/assets/updateaccount-screenshot.png)
 
 
 
