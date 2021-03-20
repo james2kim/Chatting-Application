@@ -5,7 +5,7 @@ import AuthHeader from '../Utilities/Auth-Header'
 
 // Send a Group Message 
 
-export const SendGroupMessageHandler = () => {
+export const SendGroupMessageHandler = (limit) => {
     const { enqueueSnackbar } = useSnackbar()
 
     const sendGroupMessage = async (body,token) => {
@@ -34,11 +34,11 @@ export const SendGroupMessageHandler = () => {
 export const GetGroupMessagesHandler = () => {
     const { enqueueSnackbar } = useSnackbar();
 
-    const getGroupMessages = async (token) => {
+    const getGroupMessages = async (token, limit) => {
         try {
             const response = await axios({
                 method:'GET',
-                url:'/group',
+                url:`/group/query?limit=${limit}`,
                 headers: AuthHeader(token)
             })
             return response.data
@@ -134,11 +134,11 @@ export const SendPrivateMessageHandler = () => {
 export const GetPrivateMessagesHandler = () => {
     const { enqueueSnackbar } = useSnackbar()
 
-    const getPrivateMessages = async (id, token) => {
+    const getPrivateMessages = async (id, token, limit) => {
         try {
             const response = await axios({
                 method:'GET',
-                url:`/conversations/query?userId=${id}`,
+                url:`/conversations/query?userId=${id}&limit=${limit}`,
                 headers: AuthHeader(token)
             })
             return response.data

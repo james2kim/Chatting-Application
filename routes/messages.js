@@ -36,9 +36,9 @@ router.post('/group', auth, async (req, res) => {
 
 })
 
-// Route Handler to Get Group Messages
+// Route Handler to Get Group Messages, paginated to improve throughput on server 
 
-router.get('/group', auth, async (req,res) => {
+router.get('/group/query', auth, async (req,res) => {
 
     try {
        const messages = await GlobalMessage.aggregate([
@@ -51,6 +51,9 @@ router.get('/group', auth, async (req,res) => {
                 }
             }
         ])
+        .sort({'date': -1})
+        .limit(+req.query.limit)
+
         res.send(messages);
     } catch (err) {
         console.log(err);
@@ -87,7 +90,7 @@ router.get('/conversations', auth, async (req, res) => {
 
 })
 
-// Route Handler to GET private messages 
+// Route Handler to GET private messages, paginated to improve throughput on server 
 router.get('/conversations/query', auth, async (req, res) => {
     let user1 = mongoose.Types.ObjectId(req.user._id);
     let user2 = mongoose.Types.ObjectId(req.query.userId);
@@ -116,6 +119,9 @@ router.get('/conversations/query', auth, async (req, res) => {
                     { $and: [{ to: user2 }, { from: user1 }] },
                 ],
             })
+            .sort({'date': -1})
+            .limit(+req.query.limit)
+         
  
         res.send(messages);
     } catch (err) {
@@ -143,7 +149,8 @@ router.get('/conversation/query', auth, async (req, res) => {
                     { $elemMatch: { $eq: from} },
                     { $elemMatch: { $eq: to } },
                 ],
-            },
+            }
+    
         })
         res.send(response)
     } catch (err) {

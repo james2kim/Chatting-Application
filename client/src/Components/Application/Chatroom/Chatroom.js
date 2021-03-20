@@ -15,8 +15,9 @@ import GlobalImage from '../../../assets/global.png'
 const Chatroom = props => {
     const { enqueueSnackbar } = useSnackbar()
     const [newMessage, setNewMessage] = useState('')
+    const [limit, setLimit] = useState(10)
     const [audio] = useState(new Audio("https://www.soundjay.com/phone/sounds/phone-receiver-button-1.mp3"))
-
+    const [divHeight, setDivHeight] = useState(document.querySelector('#messages'))
     // Asynchronous functions
     const getGroupMessages = GetGroupMessagesHandler()
     const sendGroupMessage = SendGroupMessageHandler()
@@ -40,18 +41,33 @@ const Chatroom = props => {
         objDiv.scrollTop = objDiv.scrollHeight;
     };
 
+    // Function to detect if user is at top of chatroom, if so, we will send the next set of paginated messages 
+
+    const handleScroll = e => {
+        const top = e.target.scrollTop
+        if (top === 0) {
+            setLimit(limit + 6)
+            e.target.scrollTop = 5
+        }
+    }
+
+
     // Load Messages in chat box when new message is received or when the scope is changed
     useEffect(() => {
    
         async function fetchData() {
+            const objDiv = document.querySelector('#messages')
             await loadMessages()
-            scrollToBottom()
+            if (scope === 'Global Chat' && limit === 10) scrollToBottom()
         }
 
         fetchData()
 
+    }, [recentMessage, scope, conversationID, limit])
 
-    }, [recentMessage, scope, conversationID])
+
+
+
 
     // Socket Connection, alerts, and notifications for new messages 
     useEffect(() => {
@@ -82,7 +98,10 @@ const Chatroom = props => {
 
 
     // Adjust position of messages in chatbox
-    useEffect(scrollToBottom, [messages])
+    useEffect(() => {
+     scrollToBottom()
+     setLimit(10)
+    }, [scope])
 
     // Text Area Size Reformat
     useEffect(() => {
@@ -114,13 +133,13 @@ const Chatroom = props => {
     const loadMessages = async () => {
         try {
             if (props.scope === 'Global Chat') {
-                const response = await getGroupMessages(currentUser[0].token)
+                const response = await getGroupMessages(currentUser[0].token, limit)
 
-                setMessages(response)
+                setMessages(response.reverse())
             } else if (scope!== null && conversationID) {
-                let response = await getPrivateMessages(user._id, currentUser[0].token)
+                let response = await getPrivateMessages(user._id, currentUser[0].token, limit)
                 await resetCount(currentUser[0].token, conversationID)
-                setMessages(response)
+                setMessages(response.reverse())
                 return response
             } else {
                 setMessages([])
@@ -183,7 +202,7 @@ const Chatroom = props => {
             </span>
         </header>
 
-        <div id="messages"  className={styles.Messages}>
+        <div id="messages"  className={styles.Messages} onScroll={handleScroll}>
         {messages.map(message => {
             return <div key={message._id} className={styles.Message}>
                                 <span className={styles.AvatarSpacing}>
