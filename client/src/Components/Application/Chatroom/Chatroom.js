@@ -15,7 +15,7 @@ import GlobalImage from '../../../assets/global.png'
 const Chatroom = props => {
     const { enqueueSnackbar } = useSnackbar()
     const [newMessage, setNewMessage] = useState('')
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(20)
     const [audio] = useState(new Audio("https://www.soundjay.com/phone/sounds/phone-receiver-button-1.mp3"))
     const [divHeight, setDivHeight] = useState(document.querySelector('#messages'))
     // Asynchronous functions
@@ -46,7 +46,7 @@ const Chatroom = props => {
     const handleScroll = e => {
         const top = e.target.scrollTop
         if (top === 0) {
-            setLimit(limit + 6)
+            setLimit(limit + 10)
             e.target.scrollTop = 5
         }
     }
@@ -58,7 +58,7 @@ const Chatroom = props => {
         async function fetchData() {
             const objDiv = document.querySelector('#messages')
             await loadMessages()
-            if (limit === 10) scrollToBottom()
+            if (limit === 20) scrollToBottom()
         }
 
         fetchData()
@@ -100,7 +100,7 @@ const Chatroom = props => {
 
     useEffect(() => {
      scrollToBottom()
-     setLimit(10)
+     setLimit(20)
     }, [scope])
 
     // Text Area Size Reformat
