@@ -58,7 +58,7 @@ const Chatroom = props => {
         async function fetchData() {
             const objDiv = document.querySelector('#messages')
             await loadMessages()
-            if (scope === 'Global Chat' && limit === 10) scrollToBottom()
+          scrollToBottom()
         }
 
         fetchData()
@@ -96,10 +96,7 @@ const Chatroom = props => {
     // eslint-disable-next-line
     },[])
 
-
-
     // Adjust position of messages in chatbox
-
 
     useEffect(() => {
      scrollToBottom()
