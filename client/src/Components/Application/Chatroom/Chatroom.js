@@ -58,7 +58,7 @@ const Chatroom = props => {
         async function fetchData() {
             const objDiv = document.querySelector('#messages')
             await loadMessages()
-          scrollToBottom()
+            if (limit === 10) scrollToBottom()
         }
 
         fetchData()
