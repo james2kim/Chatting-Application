@@ -75,7 +75,7 @@ const Chatroom = props => {
             const URL = process.env.URL
             const socket = socketIOClient();
             socket.on('messages', data => {
-
+            console.log('socket is working')
                 if (mounted) setRecentMessage(data) 
 
                 if (!data.recipientID && data.id !== currentUser[0].user._id) {
