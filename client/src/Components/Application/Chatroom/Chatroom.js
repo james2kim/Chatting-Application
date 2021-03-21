@@ -139,7 +139,7 @@ const Chatroom = props => {
             } else if (scope!== null && conversationID) {
                 let response = await getPrivateMessages(user._id, currentUser[0].token, limit)
                 await resetCount(currentUser[0].token, conversationID)
-                setMessages(response)
+                setMessages(response.reverse())
                 return response
             } else {
                 setMessages([])
